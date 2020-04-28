@@ -1,0 +1,34 @@
+.navbar {
+    border-bottom: #557334 2px solid;
+    
+}
+.navbar .navbar-brand {
+    color : #4E692F;
+    font-size: 24px;
+    
+}
+.nav-link{
+    color: #F2F2F2 !important;
+    text-transform: uppercase;
+    transition: color 0.5s ease;
+}
+.nav-link:hover {
+    color: #4E692F !important;
+}
+#headerSection {
+   background: url('../images/headerBackground.jpg') no-repeat center center fixed;
+    background-size: cover; 
+    height: 40vh;
+}
+#headerSection .overlay {
+    background-color: rgba(0,0,0,.5)
+}
+#headerSection .row{
+    height: 40vh;
+}
+#headerSection h1 {
+    color: #F2F2F2;
+}
+#headerSection span {
+    
+}
