@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+      
+    <link rel="stylesheet" href="css/bootstrap.css">
+      
+    <link rel="stylesheet" href="css/style_iletisim.css">
+
+    <script defer src="js/iletisimKontrol.js"></script>
+      
+    <title>Web Projesi</title>
+  </head>
+  <body>
+      
+
+    
+<nav class="navbar navbar-expand-md navbar-dark bg-success fixed-top">
+      <div class="container">
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#nvbCollapse">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+        <a href="#" class="navbar-brand">WEB PROJESİ</a> 
+          <div id="nvbCollapse" class="collapse navbar-collapse" >
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">HAKKINDA</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">MEMLEKETİM</a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link" href="#">MİRASIMIZ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">CV</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="giris.html">GİRİŞ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="iletisim.html">İLETİŞİM</a>
+                  </li>
+              </ul>
+          </div>
+    </div>
+      </nav>
+      
+    <header id="headerSection">
+    <div class="overlay">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col my-auto">
+                  <h1 class="display-3"><span></span>İLETİŞİM</h1>
+                </div>
+            </div>
+        </div>
+        </div>  
+    </header>
+      <section id="form" class="py-5">
+        <div class="container px-5">
+            <form name="iletisimFormu" id="iletisimFormu" method="post"
+                  action="php/iletisim.php">
+                           <div class="row">
+               <div class="col-lg-4 my-auto">
+              </div>
+            <div class="col-lg-6 my-auto">
+              
+                <div class="form-group">
+                  
+                      <div id="hata"></div>
+                    </div>
+
+              </div>
+            </div>
+          <div class="row">
+               <div class="col-lg-4 my-auto">
+              </div>
+            <div class="col-lg-6 my-auto">
+              
+                <div class="form-group">
+                  <div class="input-group input-group-lg ">
+                      <label for="isim" class="col-form-label" >İsim :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                       <input type="text" id="isim" name="isim"><br>
+                      
+                    </div>
+                  </div> 
+              </div>
+            </div>
+           <div class="row">
+               <div class="col-lg-4 my-auto">
+              </div>
+            <div class="col-lg-6 my-auto">
+              
+                <div class="form-group">
+                  <div class="input-group input-group-lg ">
+                      <label for="Soyisim" class="col-form-label">Soyisim :&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                       <input type="text" id="soyisim" name="soyisim"><br>
+                      
+                    </div>
+                  </div> 
+              </div>
+            </div>
+                
+             <div class="row">
+               <div class="col-lg-4 my-auto">
+              </div>
+            <div class="col-lg-6 my-auto">
+              
+                <div class="form-group">
+                  <div class="input-group input-group-lg ">
+                      <label for="isim" class="col-form-label">Cinsiyetiniz&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+                       <select id="cinsiyet" name="cinsiyet">
+                       <option value="erkek">Erkek</option>
+                       <option value="kadin">Kadın</option>
+                      
+                       </select>
+                      
+                      
+                    </div>
+                  </div> 
+              </div>
+            </div>
+                <div class="row">
+               <div class="col-lg-4 my-auto">
+              </div>
+            <div class="col-lg-6 my-auto">
+              
+                <div class="form-group">
+                  <div class="input-group input-group-lg ">
+                      Sitemizi hangi cihazlardan ziyaret ediyorsunuz?
+
+                    </div>
+                  </div> 
+              </div>
+            </div>
+                
+            <div class="row">
+               <div class="col-lg-4 my-auto">
+              </div>
+            <div class="col-lg-6 my-auto">
+              
+                <div class="form-group">
+                  <div class="input-group input-group-lg">
+                     <div class="form-check form-check-inline">
+                       <input class="form-check-input" type="checkbox"  id="Cihaz1" name="Cihaz1" value="Telefon">
+                      <label class="form-check-label" for="Cihaz1">Telefon&nbsp;&nbsp;</label>
+                      </div>
+                     <div class="form-check form-check-inline">
+                       <input class="form-check-input" type="checkbox"  id="Cihaz2" name="Cihaz2" value="Tablet">
+                      <label class="form-check-label" for="Cihaz1">Tablet&nbsp;&nbsp;</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                       <input class="form-check-input" type="checkbox"  id="Cihaz3" name="Cihaz3" value="Bilgisayar">
+                      <label class="form-check-label" for="Cihaz1">Bilgisayar&nbsp;&nbsp;</label>
+                      </div>
+
+                    </div>
+                  </div> 
+              </div>
+            </div>
+                                <div class="row">
+               <div class="col-lg-4 my-auto">
+              </div>
+            <div class="col-lg-6 my-auto">
+              
+                <div class="form-group">
+                  <div class="input-group input-group-lg ">
+                      Takımınız?
+
+                    </div>
+                  </div> 
+              </div>
+            </div>
+                
+           <div class="row">
+               <div class="col-lg-4 my-auto">
+              </div>
+            <div class="col-lg-6 my-auto">
+              
+                <div class="form-group">
+                  <div class="input-group input-group-lg ">
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" id="Takim1" name="Takim" value="Galatasaray">
+                     <label class="form-check-label" for="Yas1">Galatasaray&nbsp;&nbsp;</label>
+                       </div>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" id="Takim2" name="Takim" value="Fenerbahçe">
+                     <label class="form-check-label" for="Yas1">Fenerbahçe&nbsp;&nbsp;</label>
+                       </div>                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" id="Takim3" name="Takim" value="Beşiktaş">
+                     <label class="form-check-label" for="Yas1">Beşiktaş&nbsp;&nbsp;</label>
+                       </div>  
+
+                    </div>
+                  </div> 
+              </div>
+            </div>
+                
+           <div class="row">
+               <div class="col-lg-4 my-auto">
+              </div>
+            <div class="col-lg-6 my-auto">
+              
+                <div class="form-group">
+                  <div class="input-group input-group-lg ">
+                        <label class="col-form-label" for="dogum">Doğum tarihiniz :&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                     <input type="date" id="dogum" name="dogum">
+                    </div>
+                  </div> 
+              </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-4 my-auto">
+              </div>
+            <div class="col-lg-6 my-auto">
+              
+                <div class="form-group">
+                  <div class="input-group input-group-lg ">
+                      <label class="col-form-label" for="email">E-mail adresiniz :&nbsp;&nbsp;</label>
+                      <input type="email" id="email" name="email">
+
+                    </div>
+                  </div> 
+              </div>
+            </div>
+                <div class="row">
+               <div class="col-lg-4 my-auto">
+              </div>
+            <div class="col-lg-6 my-auto">
+              
+                <div class="form-group">
+                  <div class="input-group input-group-lg ">
+                   <label class="col-form-label" for="telefon">Cep telefonu :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                   <input type="tel" id="telefon" name="telefon" placeholder="05559998877" pattern="[0]{1}[0-9]{10}" required><br><br>
+                  
+
+                    </div>
+                  </div> 
+              </div>
+            </div>
+                
+                <div class="row">
+               <div class="col-lg-4 my-auto">
+              </div>
+            <div class="col-lg-6 my-auto">
+              
+                <div class="form-group">
+                  <div class="input-group input-group-lg ">
+                      <label for="mesaj">Mesajınız&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                       <textarea class="form-control" id="mesaj" name="mesaj" rows="10" cols="30"></textarea>
+                      
+                      
+                    </div>
+                  </div> 
+              </div>
+            </div>
+                
+           <div class="row">
+               <div class="col-lg-4 my-auto">
+              </div>
+            <div class="col-lg-6 my-auto">
+              
+                <div class="form-group">
+                  <div class="input-group input-group-lg ">
+                      <label>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                       <input type="submit" value="Gönder"><br>
+                      
+                    </div>
+                  </div> 
+              </div>
+            </div>                
+                </form>
+          </div>
+      </section>
+    
+      
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>
