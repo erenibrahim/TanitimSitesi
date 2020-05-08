@@ -14,6 +14,40 @@
     <link rel="stylesheet" href="css/style_giris.css">
 
     <title>Web Projesi</title>
+      
+      <script type="text/javascript">
+         function formKontrol(){
+             
+             var kullaniciAdi = document.getElementById("kullaniciAd").value;
+             
+             var sifre = document.getElementById("kullaniciParola").value;
+
+             var kullaniciAdiKontrol = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,10})(.[a-z]{2,8})$/;
+             var sifrekontrol = /^([a-zA-Z0-9\.-]+)$/;
+             var kontrol1 = new Boolean(true);
+             var kontrol2 = new Boolean(true);
+             
+             
+             
+             if (kullaniciAdiKontrol.test(kullaniciAdi)==false){
+                kontrol1 = false;
+                document.getElementById("lbltext").innerHTML="geçersiz kullanıcı adı";  
+                document.getElementById("lbltext").style.color="red";
+             }
+             if (sifrekontrol.test(sifre)==false){
+                kontrol2 = false;
+                document.getElementById("lbltext").innerHTML="geçersiz parola";  
+                document.getElementById("lbltext").style.color="red";
+             }
+                if(kontrol1 && kontrol2){
+                document.girisFormu.action = "php/giris.php";
+                document.girisFormu.submit();
+             }
+             
+         }    
+      
+      </script>
+      
   </head>
   <body>
     
@@ -32,7 +66,7 @@
                     <a class="nav-link" href="memleketim.html">MEMLEKETİM</a>
                   </li>
                    <li class="nav-item">
-                    <a class="nav-link" href="#">MİRASIMIZ</a>
+                    <a class="nav-link" href="mirasimiz.html">MİRASIMIZ</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="CV.html">CV</a>
@@ -64,24 +98,30 @@
       <div class="row">
         <div class="col-md-8 offset-2">
           <div class="jumbotron p-5">
-            <form>
+            <form name="girisFormu" id="girisFormu" method="post" onsubmit="return false">
               <div class="form-group row">
                   <label class="col-md-3 col-form-label">Kullanıcı Adı</label>
                   <div class="col-md-9">
-                <input name="kullaniciAdi" type="text" class="form-control">
+                <input name="kullaniciAdi" id="kullaniciAd" type="text" class="form-control">
                   </div>
                 </div>
               <div class="form-group row">
               <label class="col-md-3 col-form-label">Şifre</label>
               <div class="col-md-9">
-               <input name="parola" type="password" class="form-control">
+               <input name="parola" type="password" id="kullaniciParola" class="form-control">
                   </div>
                 </div>
                 <div class="form-group row">
+                    <div class="col-md-12">
+                      <label id="lbltext" class="lblerr" style="color: red;"></label>
+                    </div>
+                </div>
+                <div class="form-group row">
               <div class="col-md-12">
-               <button type="submit" class="btn btn-primary float-right" >Giriş</button>
+                <button class="gonderButton" onclick="formKontrol() "style="float: right;">Giriş</button>
                   </div>
                 </div>
+                
               </form>
             </div>
           </div>

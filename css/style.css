@@ -18,6 +18,14 @@ body {
     margin-right: auto;
     margin-bottom: 0;
 }
+.jumbotron .col-md-12{
+    margin:auto;
+    text-align: center;
+    
+}
+.jumbotron .col-md-12 h3{
+    color: aqua;
+}
 .navbar .navbar-brand {
     color : #4E692F;
     font-size: 24px;
@@ -32,7 +40,8 @@ body {
     color: #4E692F !important;
 }
 #headerSection .overlay {
-    background-color: rgba(0,0,0,.5)
+    background-color: rgba(0,0,0,.5);
+        
 }
 #headerSection .row{
     height: 40vh;

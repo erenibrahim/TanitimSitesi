@@ -5,20 +5,27 @@ const ceptelefonu = document.getElementById('telefon')
 const mesaj = document.getElementById('mesaj')
 const hataElementi = document.getElementById('hata')
 
+
 form.addEventListener('submit',(e) => {
     let messages = []
     if (isim.value == "" || isim.value == null){
         messages.push('isim doldurulmalıdır')
     }
-    else if (soyisim.value == "" || soyisim.value == null){
+    if (soyisim.value == "" || soyisim.value == null){
         messages.push('soyisim doldurulmalıdır')
     }
-    else if (email.value == "" || email.value == null){
+    if (email.value == "" || email.value == null){
         messages.push('e-mail doldurulmalıdır')
     }
-     else if (mesaj.value == "" || mesaj.value == null){
+    if(!(email.includes(".")){
+    messages.push('e-mail yanlış')  
+    }
+   
+    if (mesaj.value == "" || mesaj.value == null){
         messages.push('mesaj yazılmalıdır')
     }
+    
+ 
 
     
     

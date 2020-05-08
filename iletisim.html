@@ -12,10 +12,93 @@
     <link rel="stylesheet" href="css/bootstrap.css">
       
     <link rel="stylesheet" href="css/style_iletisim.css">
-
-    <script defer src="js/iletisimKontrol.js"></script>
       
     <title>Web Projesi</title>
+      
+      <script type="text/javascript">
+         function formKontrol(){
+             var isim = document.getElementById("isim").value;
+             var soyisim = document.getElementById("soyisim").value;
+             var mail = document.getElementById("email").value;
+             var cepTelefonu = document.getElementById("telefon").value;
+             var message = document.getElementById("mesaj").value;
+             var cihaz1 = document.getElementById("Cihaz1");
+             var cihaz2 = document.getElementById("Cihaz2");
+             var cihaz3 = document.getElementById("Cihaz3");
+             var takim1 = document.getElementById("Takim1");
+             var takim2 = document.getElementById("Takim2");
+             var takim3 = document.getElementById("Takim3");
+             var takim4 = document.getElementById("Takim4");
+             var dogum = document.getElementById("dogum").value;
+             var mailkontrol = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,10})(.[a-z]{2,8})$/;
+             var isimkontrol = /^([a-zA-Z]+)$/;
+             var telefonkontrol = /^0([0-9]{10})$/;
+             var kontrol1 = new Boolean(true);
+             var kontrol2 = new Boolean(true);
+             var kontrol3 = new Boolean(true);
+             var kontrol4 = new Boolean(true);
+             var kontrol5 = new Boolean(true);
+             var kontrol6 = new Boolean(true);
+             var kontrol7 = new Boolean(true);
+             var kontrol8 = new Boolean(true);
+             
+             if(mailkontrol.test(mail))
+                 {
+  
+                 }
+            else {
+                     document.getElementById("lbltext").innerHTML="geçersiz mail";
+                     document.getElementById("lbltext").style.visibility="visible";   
+                     document.getElementById("lbltext").style.color="red";
+                     kontrol1 = false;
+                     
+                 }
+             
+             if (isim == "" || isim == null || isim.length < 2 || isimkontrol.test(isim)==false){
+                kontrol2 = false;
+                document.getElementById("lbltext").innerHTML="geçersiz isim";   
+                document.getElementById("lbltext").style.color="red";
+             }
+             if (soyisim == "" || soyisim == null || soyisim.length < 2 || isimkontrol.test(soyisim)==false){
+                kontrol3 = false;
+                document.getElementById("lbltext").innerHTML="geçersiz soyisim";   
+                document.getElementById("lbltext").style.color="red";
+              }
+             if (message == "" || message == null ){
+                kontrol4 = false;
+                document.getElementById("lbltext").innerHTML="mesaj boş olmamalıdır";   
+                document.getElementById("lbltext").style.color="red";
+              }
+             if (telefonkontrol.test(cepTelefonu)==false){
+                kontrol5 = false;
+                document.getElementById("lbltext").innerHTML="geçersiz telefon telefon 11 haneli olmalıdır";  
+                document.getElementById("lbltext").style.color="red";
+             }
+             if(cihaz1.checked == false && cihaz2.checked == false && cihaz3.checked == false){
+                kontrol6 = false;
+                document.getElementById("lbltext").innerHTML="en az 1 cihaz seçilmelidir";  
+                document.getElementById("lbltext").style.color="red";
+                }
+             if(takim1.checked == false && takim2.checked == false && takim3.checked == false && takim4.checked == false) {
+                kontrol7 = false;
+                 document.getElementById("lbltext").innerHTML="Takım seçilmelidir";  
+                document.getElementById("lbltext").style.color="red";
+                }
+             if(dogum=="" || dogum == null){
+                kontrol8 = false;
+                 document.getElementById("lbltext").innerHTML="Doğum tarihi doldurulmalıdır";  
+                document.getElementById("lbltext").style.color="red";
+                }
+             
+             if(kontrol1 && kontrol2 && kontrol3 && kontrol4 && kontrol5 && kontrol6 && kontrol7 && kontrol8){
+                document.iletisimFormu.action = "php/iletisim.php";
+                document.iletisimFormu.submit();
+             }
+             
+         }    
+      
+      </script>
+      
   </head>
   <body>
       
@@ -33,13 +116,13 @@
                     <a class="nav-link" href="index.html">HAKKINDA</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">MEMLEKETİM</a>
+                    <a class="nav-link" href="memleketim.html">MEMLEKETİM</a>
                   </li>
                    <li class="nav-item">
-                    <a class="nav-link" href="#">MİRASIMIZ</a>
+                    <a class="nav-link" href="mirasimiz.html">MİRASIMIZ</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">CV</a>
+                    <a class="nav-link" href="CV.html">CV</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="giris.html">GİRİŞ</a>
@@ -64,25 +147,23 @@
         </div>  
     </header>
       <section id="form" class="py-5">
-        <div class="container px-5">
-            <form name="iletisimFormu" id="iletisimFormu" method="post"
-                  action="php/iletisim.php">
-                           <div class="row">
-               <div class="col-lg-4 my-auto">
-              </div>
-            <div class="col-lg-6 my-auto">
+            <div class="jumbotron">
+            <div class="container mp-25">
+            <form name="iletisimFormu" id="iletisimFormu" method="post" onsubmit="return false">
+                
+            <div class="row">
+             <div class="col-lg-6 my-auto">
               
-                <div class="form-group">
+              <div class="form-group">
                   
-                      <div id="hata"></div>
-                    </div>
+                <div id="hata"></div>
+            </div>
 
               </div>
+                
             </div>
           <div class="row">
-               <div class="col-lg-4 my-auto">
-              </div>
-            <div class="col-lg-6 my-auto">
+            <div class="col-lg-12 my-auto">
               
                 <div class="form-group">
                   <div class="input-group input-group-lg ">
@@ -94,9 +175,7 @@
               </div>
             </div>
            <div class="row">
-               <div class="col-lg-4 my-auto">
-              </div>
-            <div class="col-lg-6 my-auto">
+            <div class="col-lg-12 my-auto">
               
                 <div class="form-group">
                   <div class="input-group input-group-lg ">
@@ -109,9 +188,7 @@
             </div>
                 
              <div class="row">
-               <div class="col-lg-4 my-auto">
-              </div>
-            <div class="col-lg-6 my-auto">
+            <div class="col-lg-12 my-auto">
               
                 <div class="form-group">
                   <div class="input-group input-group-lg ">
@@ -128,9 +205,7 @@
               </div>
             </div>
                 <div class="row">
-               <div class="col-lg-4 my-auto">
-              </div>
-            <div class="col-lg-6 my-auto">
+            <div class="col-lg-12 my-auto">
               
                 <div class="form-group">
                   <div class="input-group input-group-lg ">
@@ -142,22 +217,20 @@
             </div>
                 
             <div class="row">
-               <div class="col-lg-4 my-auto">
-              </div>
-            <div class="col-lg-6 my-auto">
+            <div class="col-lg-12 my-auto">
               
                 <div class="form-group">
                   <div class="input-group input-group-lg">
                      <div class="form-check form-check-inline">
-                       <input class="form-check-input" type="checkbox"  id="Cihaz1" name="Cihaz1" value="Telefon">
+                       <input class="form-check-input" type="checkbox"  id="Cihaz1" name="Cihaz1">
                       <label class="form-check-label" for="Cihaz1">Telefon&nbsp;&nbsp;</label>
                       </div>
                      <div class="form-check form-check-inline">
-                       <input class="form-check-input" type="checkbox"  id="Cihaz2" name="Cihaz2" value="Tablet">
+                       <input class="form-check-input" type="checkbox"  id="Cihaz2" name="Cihaz2">
                       <label class="form-check-label" for="Cihaz1">Tablet&nbsp;&nbsp;</label>
                       </div>
                       <div class="form-check form-check-inline">
-                       <input class="form-check-input" type="checkbox"  id="Cihaz3" name="Cihaz3" value="Bilgisayar">
+                       <input class="form-check-input" type="checkbox"  id="Cihaz3" name="Cihaz3">
                       <label class="form-check-label" for="Cihaz1">Bilgisayar&nbsp;&nbsp;</label>
                       </div>
 
@@ -165,10 +238,10 @@
                   </div> 
               </div>
             </div>
-                                <div class="row">
-               <div class="col-lg-4 my-auto">
-              </div>
-            <div class="col-lg-6 my-auto">
+                
+            <div class="row">
+
+            <div class="col-lg-12 my-auto">
               
                 <div class="form-group">
                   <div class="input-group input-group-lg ">
@@ -180,23 +253,26 @@
             </div>
                 
            <div class="row">
-               <div class="col-lg-4 my-auto">
-              </div>
-            <div class="col-lg-6 my-auto">
+            <div class="col-lg-12 my-auto">
               
                 <div class="form-group">
                   <div class="input-group input-group-lg ">
                       <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="Takim1" name="Takim" value="Galatasaray">
+                      <input class="form-check-input" type="radio" id="Takim1" name="Takim">
                      <label class="form-check-label" for="Yas1">Galatasaray&nbsp;&nbsp;</label>
                        </div>
                       <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="Takim2" name="Takim" value="Fenerbahçe">
+                      <input class="form-check-input" type="radio" id="Takim2" name="Takim">
                      <label class="form-check-label" for="Yas1">Fenerbahçe&nbsp;&nbsp;</label>
-                       </div>                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="Takim3" name="Takim" value="Beşiktaş">
+                       </div>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" id="Takim3" name="Takim">
                      <label class="form-check-label" for="Yas1">Beşiktaş&nbsp;&nbsp;</label>
-                       </div>  
+                       </div>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" id="Takim4" name="Takim">
+                     <label class="form-check-label" for="Yas1">Diğer&nbsp;&nbsp;</label>
+                       </div>
 
                     </div>
                   </div> 
@@ -204,9 +280,7 @@
             </div>
                 
            <div class="row">
-               <div class="col-lg-4 my-auto">
-              </div>
-            <div class="col-lg-6 my-auto">
+            <div class="col-lg-12 my-auto">
               
                 <div class="form-group">
                   <div class="input-group input-group-lg ">
@@ -217,9 +291,7 @@
               </div>
             </div>
             <div class="row">
-               <div class="col-lg-4 my-auto">
-              </div>
-            <div class="col-lg-6 my-auto">
+            <div class="col-lg-12 my-auto">
               
                 <div class="form-group">
                   <div class="input-group input-group-lg ">
@@ -231,14 +303,13 @@
               </div>
             </div>
                 <div class="row">
-               <div class="col-lg-4 my-auto">
-              </div>
-            <div class="col-lg-6 my-auto">
+               
+            <div class="col-lg-12 my-auto">
               
                 <div class="form-group">
                   <div class="input-group input-group-lg ">
                    <label class="col-form-label" for="telefon">Cep telefonu :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                   <input type="tel" id="telefon" name="telefon" placeholder="05559998877" pattern="[0]{1}[0-9]{10}" required><br><br>
+                   <input type="tel" id="telefon" name="telefon" placeholder="05559998877"><br><br>
                   
 
                     </div>
@@ -247,14 +318,13 @@
             </div>
                 
                 <div class="row">
-               <div class="col-lg-4 my-auto">
-              </div>
-            <div class="col-lg-6 my-auto">
+ 
+            <div class="col-lg-11 my-auto">
               
                 <div class="form-group">
                   <div class="input-group input-group-lg ">
                       <label for="mesaj">Mesajınız&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                       <textarea class="form-control" id="mesaj" name="mesaj" rows="10" cols="30"></textarea>
+                       <textarea class="form-control" id="mesaj" name="mesaj"></textarea>
                       
                       
                     </div>
@@ -262,22 +332,41 @@
               </div>
             </div>
                 
-           <div class="row">
-               <div class="col-lg-4 my-auto">
-              </div>
-            <div class="col-lg-6 my-auto">
+                <div class="row">
+                    <div class="col-md-12">
+                      <label id="lbltext" class="lblerr" style="color: red;"></label>
+                    </div>
+                </div>
+               
+               <div class="row">
+
+            <div class="col-md-6">
               
                 <div class="form-group">
-                  <div class="input-group input-group-lg ">
-                      <label>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                       <input type="submit" value="Gönder"><br>
+                  <div class="input-group input-group-lg gonder">
+                      
+                      <button onclick="formKontrol()">Gönder</button>
                       
                     </div>
                   </div> 
               </div>
+               <div class="col-md-6">
+               <div class="form-group">
+                  <div class="input-group input-group-lg temizle">
+                      
+                       <input type="reset" value="Temizle">
+                      
+                    </div>
+                  </div> 
+                   
+               </div>
+               
+               
             </div>                
                 </form>
           </div>
+          </div>
+          
       </section>
     
       
