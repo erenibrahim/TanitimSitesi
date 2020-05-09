@@ -8,7 +8,7 @@
 
   
   if ($isim == "g191210013@sakarya.edu.tr" && $sifre=="123") {
-  echo "<br>"."Hoşgeldiniz :".$isim."<br>";
+  echo "<br>"."Hoşgeldiniz g191210013"."<br>";
   }
   else{
       header('Location: ../giris.html');

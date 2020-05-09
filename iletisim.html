@@ -29,6 +29,7 @@
              var takim2 = document.getElementById("Takim2");
              var takim3 = document.getElementById("Takim3");
              var takim4 = document.getElementById("Takim4");
+             var takimtur = document.getElementById("takimTur");
              var dogum = document.getElementById("dogum").value;
              var mailkontrol = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,10})(.[a-z]{2,8})$/;
              var isimkontrol = /^([a-zA-Z]+)$/;
@@ -84,6 +85,18 @@
                  document.getElementById("lbltext").innerHTML="Takım seçilmelidir";  
                 document.getElementById("lbltext").style.color="red";
                 }
+             if(takim1.checked == true){
+                 document.getElementById("takimTur").innerHTML="Galatasaray";
+             }
+             if(takim2.checked == true){
+                 document.getElementById("takimTur").innerHTML="Fenerbahçe";
+             }
+             if(takim3.checked == true){
+                 document.getElementById("takimTur").innerHTML="Beşiktaş";
+             }
+             if(takim4.checked == true){
+                 document.getElementById("takimTur").innerHTML="Diğer";
+             }
              if(dogum=="" || dogum == null){
                 kontrol8 = false;
                  document.getElementById("lbltext").innerHTML="Doğum tarihi doldurulmalıdır";  
@@ -227,11 +240,11 @@
                       </div>
                      <div class="form-check form-check-inline">
                        <input class="form-check-input" type="checkbox"  id="Cihaz2" name="Cihaz2">
-                      <label class="form-check-label" for="Cihaz1">Tablet&nbsp;&nbsp;</label>
+                      <label class="form-check-label" for="Cihaz2">Tablet&nbsp;&nbsp;</label>
                       </div>
                       <div class="form-check form-check-inline">
                        <input class="form-check-input" type="checkbox"  id="Cihaz3" name="Cihaz3">
-                      <label class="form-check-label" for="Cihaz1">Bilgisayar&nbsp;&nbsp;</label>
+                      <label class="form-check-label" for="Cihaz3">Bilgisayar&nbsp;&nbsp;</label>
                       </div>
 
                     </div>
@@ -258,20 +271,20 @@
                 <div class="form-group">
                   <div class="input-group input-group-lg ">
                       <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="Takim1" name="Takim">
-                     <label class="form-check-label" for="Yas1">Galatasaray&nbsp;&nbsp;</label>
+                      <input class="form-check-input" type="radio" id="Takim1" name="Takim" value="Galatasaray";>
+                     <label class="form-check-label" for="Takim1">Galatasaray&nbsp;&nbsp;</label>
                        </div>
                       <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="Takim2" name="Takim">
-                     <label class="form-check-label" for="Yas1">Fenerbahçe&nbsp;&nbsp;</label>
+                      <input class="form-check-input" type="radio" id="Takim2" name="Takim" value="Fenerbahçe";>
+                     <label class="form-check-label" for="Takim2">Fenerbahçe&nbsp;&nbsp;</label>
                        </div>
                       <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="Takim3" name="Takim">
-                     <label class="form-check-label" for="Yas1">Beşiktaş&nbsp;&nbsp;</label>
+                      <input class="form-check-input" type="radio" id="Takim3" name="Takim" value="Beşiktaş";>
+                     <label class="form-check-label" for="Takim3">Beşiktaş&nbsp;&nbsp;</label>
                        </div>
                       <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="Takim4" name="Takim">
-                     <label class="form-check-label" for="Yas1">Diğer&nbsp;&nbsp;</label>
+                      <input class="form-check-input" type="radio" id="Takim4" name="Takim" value="Diğer";>
+                     <label class="form-check-label" for="Takim4">Diğer&nbsp;&nbsp;</label>
                        </div>
 
                     </div>
@@ -338,6 +351,8 @@
                     </div>
                 </div>
                
+                <textarea class="form-control" id="takimTur" name="takimTur" style="visibility: hidden"></textarea>
+                
                <div class="row">
 
             <div class="col-md-6">
@@ -350,6 +365,7 @@
                     </div>
                   </div> 
               </div>
+                   
                <div class="col-md-6">
                <div class="form-group">
                   <div class="input-group input-group-lg temizle">
