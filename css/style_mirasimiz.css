@@ -83,14 +83,16 @@ h3 {
     height: 40vh;
 }
 #headerSection2 p {
-    font-size: 32px;
+    font-size: 26px;
     text-align: center
 }
 #headerSection2 .link {
-    padding-left: 30px;
-    margin-left: 40px;
+    padding-left: 0px;
+    margin-left: 10px;
     text-decoration: none;
     color:brown;
+    border: 1px;
+    border-style: solid;
 }
 #headerSection3 .row{
     height: 20vh;

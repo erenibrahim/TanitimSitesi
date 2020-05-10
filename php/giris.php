@@ -11,7 +11,7 @@
   echo "<br>"."Hoşgeldiniz g191210013"."<br>";
   }
   else{
-      header('Location: ../giris.html');
+      echo "<br>"."Hatalı giriş yaptınız."."<br>";
   }
 
   
